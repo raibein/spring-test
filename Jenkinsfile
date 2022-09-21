@@ -39,7 +39,11 @@ node {
     //     bat """mvn clean install"""
     // }
 
-    stage('run mvn build spring boot') {
-        bat """mvn spring-boot:run"""
+    stage('run mvn clean') {
+        bat """mvn clean compile package"""
     }
+
+    // stage('run mvn build spring boot') {
+    //     bat """mvn spring-boot:run"""
+    // }
 }
