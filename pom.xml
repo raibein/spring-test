@@ -12,7 +12,7 @@
     <groupId>com.example</groupId>
     <artifactId>spring-test</artifactId>
     <version>1.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>spring-test</name>
     <description>A simple Spring Boot app to send hello world message to a user</description>
