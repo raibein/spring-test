@@ -32,7 +32,7 @@ node {
     //     bat """dir data"""
     // }
 
-    stage('test mvn version') {
+    stage('mvn version') {
         bat """mvn -v"""
     }
 
@@ -40,13 +40,13 @@ node {
     //     bat """mvn clean install"""
     // }
 
-    stage('run mvn compile') {
+    stage('compile') {
         bat """mvn clean compile package"""
     }
 
-    stage('run mvn build spring boot') {
-        bat """mvn spring-boot:run"""
-    }
+    // stage('run mvn build spring boot') {
+    //     bat """mvn spring-boot:run"""
+    // }
 
     stage('list of files') {
         bat """dir"""
