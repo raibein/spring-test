@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>sprint-test</artifactId>
+    <artifactId>spring-test</artifactId>
     <version>1.0.1-SNAPSHOT</version>
 
-    <name>sprint-test</name>
+    <name>spring-test</name>
     <description>A simple Spring Boot app to send hello world message to a user</description>
 
     <properties>
