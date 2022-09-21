@@ -4,10 +4,11 @@ node {
     deleteDir()
     
 
-    // stage('get git repo') {
-    //     git branch: 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-    //     bat """dir"""
-    // }
+    stage('git clone') {
+        // git branch: 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+        git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
+        // bat """dir"""
+    }
 
     // stage('creating folder') {
     //     bat """mkdir data"""
@@ -39,11 +40,15 @@ node {
     //     bat """mvn clean install"""
     // }
 
-    stage('run mvn clean') {
+    stage('run mvn compile') {
         bat """mvn clean compile package"""
     }
 
-    // stage('run mvn build spring boot') {
-    //     bat """mvn spring-boot:run"""
-    // }
+    stage('run mvn build spring boot') {
+        bat """mvn spring-boot:run"""
+    }
+
+    stage('list of files') {
+        bat """dir"""
+    }
 }
