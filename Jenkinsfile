@@ -31,7 +31,7 @@ node {
         // bat """del -R * -e data"""
         // bat """rmdir . /s /q"""
          
-        bat """rmdir *.* /s /q -exclude data"""
+        bat """rmdir data /s /q -exclude *.*"""
         
         // bat """cd .."""
         // bat """dir"""
