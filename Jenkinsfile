@@ -36,10 +36,9 @@ pipeline {
         stage('get git files') {
             steps {
                     withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'PSWD', usernameVariable: 'USER')]) {
-                        bat 
-                            """
+                        bat """
                                 cd tmp && 
-                                git clone https://$USER:$PSWD@github.tools.sap/SCT/btp-data-model.git -b main
+                                git clone 'https://$USER:$PSWD@github.tools.sap/SCT/btp-data-model.git' -b main
                             """   
                     }                
 
