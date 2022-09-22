@@ -31,7 +31,7 @@ node {
             bat 
                 """
                     cd tmp &&       
-                    git clone https://${usr}:${psw}@github.tools.sap/SCT/btp-data-model.git -b main
+                    git clone https://$usr:$psw@github.tools.sap/SCT/btp-data-model.git -b main
                 """
         }
         
