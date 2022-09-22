@@ -6,38 +6,37 @@ node {
         // deleteDir()
     }
 
-    // stage('git clone') {
-    //     // git branch: 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-    //     // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
-    //     git branch : 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-    //     // bat """dir"""
-    // }
+    stage('git clone') {
+        // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+        // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
+        git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+        // bat """dir"""
+    }
 
-    // stage('creating folder') {
-    //     bat """mkdir data"""
-    // }
+    stage('creating folder') {
+        bat """mkdir data"""
+    }
 
     // stage('creating txt file') {
     //     bat """echo 'Hello World!' >> readme.txt"""
     // }
 
-    // stage('move file to folder') {
-    //     bat """move readme.txt data"""
-    //     bat """cd data"""
-    //     bat """dir"""
-    //     bat """dir data"""
-    // }
-
-    // stage('move folder to folder') {
-    //     bat """move sct-db data"""
-    //     bat """cd data"""
-    //     bat """dir"""
-    //     bat """dir data"""
-    // }
-
-    stage('mvn version') {
-        bat """mvn -v"""
+    stage('move file to folder') {
+        bat """move db/src/sct-provisioning-service/sct_db/* data/"""
+        bat """cd data"""
+        bat """dir"""
+        bat """dir data"""
     }
+
+    stage('removed all except data') {
+        bat """Remove-Item -recurse * -exclude data"""
+        bat """cd data"""
+        bat """dir"""
+    }
+
+    // stage('mvn version') {
+    //     bat """mvn -v"""
+    // }
 
     // stage('run mvn clean') {
     //     bat """mvn clean install"""
@@ -52,6 +51,7 @@ node {
     // }
 
     stage('list of files') {
+        bat """cd .."""
         bat """dir"""
     }
 
