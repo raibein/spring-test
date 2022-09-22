@@ -22,7 +22,7 @@ node {
     // }
 
     stage('get git files') {
-        bat """cd tmp"""
+        bat """pushd %tmp%"""
 
         git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
     }
