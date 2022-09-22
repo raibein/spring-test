@@ -3,7 +3,7 @@ node {
     stage('Clean up') {
         bat """echo clean and delete file and directories"""
         cleanWs()
-        deleteDir()
+        // deleteDir()
     }
 
     stage('git clone') {
