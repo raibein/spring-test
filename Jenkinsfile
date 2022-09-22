@@ -19,7 +19,6 @@ node {
 
     stage('creating tmp folders') {
         bat """mkdir tmp"""
-        sh """echo $SCT_GIT_CREDS_USR"""
     }
 
     // stage('creating txt file') {
@@ -28,13 +27,14 @@ node {
 
     stage('get git files') {
 
-        // withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
-        //     bat 
-        //         """
-        //             cd tmp && echo USER
+        withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
+            // bat 
+            //     """
+            //         cd tmp && echo USER
                     
-        //         """
-        // }
+            //     """
+            sh """echo $USER""""
+        }
 
 
         // git clone https://USER:USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
