@@ -22,7 +22,8 @@ node {
     // }
 
     stage('get git files') {
-        bat """pushd %tmp% && git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'"""       
+        bat """pushd %tmp% && git clone http://sct-hyperspace-serviceuser:sct-git-credential@btp-data-model.git -b main"""
+        // git checkout main: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git
     }
 
     stage('copy from tmp') {
