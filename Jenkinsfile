@@ -27,7 +27,7 @@ node {
 
     stage('get git files') {
 
-        withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
+        withCredentials([usernamePassword(credentialsId: 'sct-git-credential', usernameVariable: 'USER')]) {
             // bat 
             //     """
             //         cd tmp && echo USER
