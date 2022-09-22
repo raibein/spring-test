@@ -31,7 +31,7 @@ node {
             JOB_TIME = "date"
         }
         
-        bat "echo $JOB_TIME"
+        bat "echo env.JOB_TIME"
 
         // withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
         //     bat 
