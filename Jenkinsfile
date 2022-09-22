@@ -28,7 +28,7 @@ node {
     stage('get git files') {
 
         environment { 
-            JOB_TIME = sh (returnStdout: true, script: "date '+%A %W %Y %X'").trim()
+            JOB_TIME = date
         }
         
         bat "echo $JOB_TIME"
