@@ -10,7 +10,7 @@ node {
         // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
         // git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        bat """curl -H Authorization:token sct-git-credential-H Accept: application/vnd.github.v3+json https://github.tools.sap/SCT/btp-data-model/tree/main/sct-db/data_test"""
+        bat """curl -H Authorization:token sct-git-credential -H Accept: application/vnd.github.v3+json https://api.github.com/repos/sct-hyperspace-serviceuser/btp-data-model/contents/sct-db/data_test"""
         // bat """dir"""
     }
 
@@ -22,11 +22,11 @@ node {
     //     bat """echo 'Hello World!' >> readme.txt"""
     // }
 
-    stage('copy to directory') {
-        bat """xcopy . tmp /E"""
-        // bat """cd data"""
-        // bat """dir"""
-    }
+    // stage('copy to directory') {
+    //     bat """xcopy . tmp /E"""
+    //     // bat """cd data"""
+    //     // bat """dir"""
+    // }
 
     // stage('removed all except data') {
     //     // bat """del -R * -e data"""
