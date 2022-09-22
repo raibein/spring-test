@@ -27,13 +27,13 @@ node {
 
     stage('get git files') {
 
-        withCredentials([usernamePassword(credentialsId: 'sct-git-credential', usernameVariable: 'USER')]) {
+        withCredentials([usernamePassword(credentialsId: 'sct-git-credential',  usernameVariable: 'USER')]) {
             // bat 
             //     """
             //         cd tmp && echo USER
                     
             //     """
-            bat """echo ${USER}"""
+            sh """echo USER"""
         }
 
 
