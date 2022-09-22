@@ -7,7 +7,7 @@ pipeline {
     stages {
 
         stage('Clean up') {
-            step {
+            steps {
                 bat """echo clean and delete file and directories"""
                 cleanWs()
                 // deleteDir()
@@ -22,7 +22,7 @@ pipeline {
         // }
 
         stage('creating tmp folders') {
-            step {
+            steps {
                 bat """mkdir tmp"""
             }
         }
@@ -32,7 +32,7 @@ pipeline {
         // }
 
         stage('get git files') {
-            step {
+            steps {
                     // withCredentials([usernamePassword(credentialsId: 'sct-git-credential',  usernameVariable: 'USER')]) {
                 //     // bat 
                 //     //     """
@@ -86,7 +86,7 @@ pipeline {
         // }
 
         stage('list of files') {
-            step {
+            steps {
                 // bat """cd .."""
                 bat """dir"""
             }
