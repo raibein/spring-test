@@ -1,5 +1,9 @@
 node {
 
+     environment {
+        SCT_GIT_CREDS = credentials('sct-git-credential')
+    }
+
     stage('Clean up') {
         bat """echo clean and delete file and directories"""
         cleanWs()
@@ -26,7 +30,7 @@ node {
         withCredentials([usernameColonPassword(credentialsId: 'sct-git-credential', variable: 'USERPASS')]) {
             bat """
                 cd tmp &&
-                git clone https://$USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
+                git clone https://${SCT_GIT_CREDS_USR}:${SCT_GIT_CREDS_PSW}@github.tools.sap/SCT/btp-data-model.git -b main
             """
         }
 
