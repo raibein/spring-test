@@ -22,7 +22,7 @@ node {
     // }
 
     stage('move to directory') {
-        bat """copy sct-db\\data_test data"""
+        bat """copy -R sct-db\\data_test data"""
         bat """cd data"""
         bat """dir"""
         bat """dir data"""
