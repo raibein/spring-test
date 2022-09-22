@@ -25,12 +25,11 @@ node {
         bat """robocopy sct-db\\data_test data /E"""
         bat """cd data"""
         bat """dir"""
-        bat """dir data"""
     }
 
     stage('removed all except data') {
         bat """Remove-Item -recurse * -exclude data"""
-        bat """cd data"""
+        bat """cd .."""
         bat """dir"""
     }
 
