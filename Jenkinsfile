@@ -31,9 +31,11 @@ node {
             bat 
                 """
                     cd tmp &&       
-                    git clone https://$usr:$psw@github.tools.sap/SCT/btp-data-model.git -b main
+                    echo $usr
                 """
         }
+
+        // git clone https://$usr:$psw@github.tools.sap/SCT/btp-data-model.git -b main
         
 
         // bat """cd tmp && git clone https://sct-hyperspace-serviceuser:password@github.tools.sap/SCT/btp-data-model.git -b main"""
