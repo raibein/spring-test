@@ -19,7 +19,7 @@ node {
 
     stage('creating tmp folders') {
         bat """mkdir tmp"""
-        bat """echo $SCT_GIT_CREDS_USR"""
+        sh """echo $SCT_GIT_CREDS_USR"""
     }
 
     // stage('creating txt file') {
