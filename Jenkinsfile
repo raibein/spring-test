@@ -7,7 +7,7 @@ node {
     stage('git clone') {
         // git branch: 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
-        git fetch : 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model/sct-db'
+        git branch : 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model/sct-db'
         // bat """dir"""
     }
 
