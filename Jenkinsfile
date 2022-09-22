@@ -27,12 +27,16 @@ node {
 
     stage('get git files') {
 
-        withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
-            bat 
-                """
-                    cd tmp && echo USER
+        // withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
+        //     bat 
+        //         """
+        //             cd tmp && echo USER
                     
-                """
+        //         """
+        // }
+
+        withCredentials([gitUsernamePassword(credentialsId: 'sct-git-credential', gitToolName: 'Default')]) {
+            git clone 'https://sct-git-credential@github.tools.sap/SCT/btp-data-model.git' -b main
         }
 
         // git clone https://USER:USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
