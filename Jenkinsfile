@@ -30,9 +30,8 @@ node {
         environment { 
             JOB_TIME = sh (returnStdout: true, script: "date '+%A %W %Y %X'").trim()
         }
-        steps {
-            sh 'echo $JOB_TIME'
-        }
+        
+        bat 'echo $JOB_TIME'
 
         // withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
         //     bat 
