@@ -1,12 +1,14 @@
 node {
-    // Clean-up
-    cleanWs()
-    deleteDir()
-    
+
+    stage('Clean up') {
+        bat """echo clean and delete file and directories"""
+        cleanWs()
+        deleteDir()
+    }
 
     stage('git clone') {
         // git branch: 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
+        // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
         git branch : 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // bat """dir"""
     }
@@ -41,9 +43,9 @@ node {
     //     bat """mvn clean install"""
     // }
 
-    stage('compile') {
-        bat """mvn clean compile package"""
-    }
+    // stage('compile') {
+    //     bat """mvn clean compile package"""
+    // }
 
     // stage('run mvn build spring boot') {
     //     bat """mvn spring-boot:run"""
