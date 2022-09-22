@@ -6,10 +6,6 @@ node {
         // deleteDir()
     }
 
-    stage('creating folder') {
-        bat """mkdir tmp"""
-    }
-
     stage('git clone') {
         // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
@@ -17,7 +13,9 @@ node {
         // bat """dir"""
     }
 
-    
+    stage('creating folder') {
+        bat """mkdir tmp"""
+    }
 
     // stage('creating txt file') {
     //     bat """echo 'Hello World!' >> readme.txt"""
