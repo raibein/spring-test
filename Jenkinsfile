@@ -1,9 +1,10 @@
 pipeline {
-    stages {
 
-        environment {
-            SCT_GIT_CREDS = credentials('sct-git-credential')
-        }
+    environment {
+        SCT_GIT_CREDS = credentials('sct-git-credential')
+    }
+    
+    stages {
 
         stage('Clean up') {
             bat """echo clean and delete file and directories"""
