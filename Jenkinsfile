@@ -21,8 +21,8 @@ node {
     //     bat """echo 'Hello World!' >> readme.txt"""
     // }
 
-    stage('move file to folder') {
-        bat """move sct-db\\data_test\\* data\\"""
+    stage('move to directory') {
+        bat """move sct-db\\data_test\\ data\\"""
         bat """cd data"""
         bat """dir"""
         bat """dir data"""
