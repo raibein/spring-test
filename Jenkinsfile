@@ -26,7 +26,7 @@ node {
         withCredentials([usernameColonPassword(credentialsId: 'sct-git-credential', variable: 'USERPASS')]) {
             bat """
                 cd tmp &&
-                git clone https://sct-hyperspace-serviceuser:$USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
+                git clone https://$USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
             """
         }
 
