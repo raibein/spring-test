@@ -10,7 +10,7 @@ node {
         // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
         // git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        bat """curl -H Authorization:Bearer 5939d49c72c16d9264927a5d8fc9bd2639dd2d08 -H Accept: application/vnd.github.v3+json https://api.github.com/orgs/SCT/repo"""
+        bat """curl -H Authorization:Bearer 5939d49c72c16d9264927a5d8fc9bd2639dd2d08 -H Accept: application/vnd.github.v3+json https://api.github.com/orgs/SCT/repos"""
         // bat """dir"""
     }
 
