@@ -1,8 +1,8 @@
 node {
 
-     environment {
-        SCT_GIT_CREDS = credentials('sct-git-credential')
-    }
+    //  environment {
+    //     SCT_GIT_CREDS = credentials('sct-git-credential')
+    // }
 
     stage('Clean up') {
         bat """echo clean and delete file and directories"""
@@ -19,7 +19,6 @@ node {
 
     stage('creating tmp folders') {
         bat """mkdir tmp"""
-        bat """echo ${SCT_GIT_CREDS_USR}"""
     }
 
     // stage('creating txt file') {
@@ -27,11 +26,15 @@ node {
     // }
 
     stage('get git files') {
-        bat 
-        """
-            cd tmp &&
-            git clone https://${SCT_GIT_CREDS_USR}:${SCT_GIT_CREDS_PSW}@github.tools.sap/SCT/btp-data-model.git -b main
-        """
+
+        withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'psw', usernameVariable: 'usr')]) {
+            bat 
+                """
+                    cd tmp &&       
+                    git clone https://${usr}:${psw}@github.tools.sap/SCT/btp-data-model.git -b main
+                """
+        }
+        
 
         // bat """cd tmp && git clone https://sct-hyperspace-serviceuser:password@github.tools.sap/SCT/btp-data-model.git -b main"""
         // git checkout main: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git
