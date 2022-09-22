@@ -7,7 +7,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 @SpringBootApplication
 public class HelloWorldApplication extends SpringBootServletInitializer {
-
     public static void main(String[] args) {
         SpringApplication.run(HelloWorldApplication.class, args);
     }
