@@ -27,21 +27,15 @@ node {
 
     stage('get git files') {
 
-        env { 
-            JOB_TIME = "date"
+        withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
+            bat 
+                """
+                    cd tmp && echo USER &&
+                    git clone https://USER:USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
+                """
         }
+
         
-        bat """echo ${env.JOB_TIME}"""
-
-        // withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
-        //     bat 
-        //         """
-        //             cd tmp &&       
-        //             echo $usr
-        //         """
-        // }
-
-        // git clone https://$usr:$psw@github.tools.sap/SCT/btp-data-model.git -b main
         
 
         // bat """cd tmp && git clone https://sct-hyperspace-serviceuser:password@github.tools.sap/SCT/btp-data-model.git -b main"""
