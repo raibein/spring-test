@@ -1,8 +1,8 @@
 node {
 
-    //  environment {
-    //     SCT_GIT_CREDS = credentials('sct-git-credential')
-    // }
+     environment {
+        SCT_GIT_CREDS = credentials('sct-git-credential')
+    }
 
     stage('Clean up') {
         bat """echo clean and delete file and directories"""
@@ -19,6 +19,7 @@ node {
 
     stage('creating tmp folders') {
         bat """mkdir tmp"""
+        bat """echo $SCT_GIT_CREDS_USR"""
     }
 
     // stage('creating txt file') {
@@ -35,9 +36,6 @@ node {
         //         """
         // }
 
-        withCredentials([gitUsernamePassword(credentialsId: 'sct-git-credential', gitToolName: 'Default')]) {
-            git clone 'https://sct-git-credential@github.tools.sap/SCT/btp-data-model.git' -b main
-        }
 
         // git clone https://USER:USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
         
