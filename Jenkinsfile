@@ -33,7 +33,7 @@ node {
             //         cd tmp && echo USER
                     
             //     """
-            sh """echo $USER""""
+            sh """echo $USER"""
         }
 
 
