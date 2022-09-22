@@ -1,9 +1,5 @@
 node {
 
-     environment {
-        cred_id = sct-git-credential
-    } 
-
     stage('Clean up') {
         bat """echo clean and delete file and directories"""
         cleanWs()
@@ -28,10 +24,10 @@ node {
     stage('get git files') {
 
         withCredentials([usernameColonPassword(credentialsId: 'sct-git-credential', variable: 'USERPASS')]) {
-            bat '''
+            bat """
                 cd tmp &&
                 git clone https://sct-hyperspace-serviceuser:$USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
-            '''
+            """
         }
 
         // bat """cd tmp && git clone https://sct-hyperspace-serviceuser:password@github.tools.sap/SCT/btp-data-model.git -b main"""
