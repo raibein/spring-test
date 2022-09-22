@@ -29,7 +29,9 @@ node {
 
     stage('removed all except data') {
         // bat """del -R * -e data"""
-        bat """del -R data"""
+        bat """del -R * -e data /s"""
+        bat """cd .."""
+        bat """dir"""
     }
 
     // stage('mvn version') {
