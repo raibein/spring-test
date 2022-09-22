@@ -1,4 +1,6 @@
 pipeline {
+    
+    agent any
 
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
