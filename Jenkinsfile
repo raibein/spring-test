@@ -28,7 +28,7 @@ node {
     }
 
     stage('removed all except data') {
-        bat """Remove-Item -recurse * -exclude data"""
+        bat """remove-item -R * -exclude data"""
         bat """cd .."""
         bat """dir"""
     }
