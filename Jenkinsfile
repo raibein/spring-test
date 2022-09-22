@@ -35,7 +35,7 @@ pipeline {
                 SCT_GIT_CREDS = credentials('sct-git-credential')
             }
             steps {
-                    bat '''cd tmp
+                    sh '''cd tmp
                             echo "${SCT_GIT_CREDS_USR}"
                     '''
 
