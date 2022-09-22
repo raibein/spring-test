@@ -30,11 +30,12 @@ node {
         withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'USERPASS', usernameVariable: 'USER')]) {
             bat 
                 """
-                    cd tmp && echo USER &&
-                    git clone https://USER:USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
+                    cd tmp && echo USER
+                    
                 """
         }
 
+        // git clone https://USER:USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
         
         
 
