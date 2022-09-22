@@ -33,10 +33,10 @@ node {
             //         cd tmp && echo USER
                     
             //     """
-            bat """echo USER"""
+            
         }
 
-
+        bat """echo $USER"""
         // git clone https://USER:USERPASS@github.tools.sap/SCT/btp-data-model.git -b main
         
         
