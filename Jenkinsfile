@@ -6,36 +6,39 @@ node {
         // deleteDir()
     }
 
+    stage('creating folder') {
+        bat """mkdir tmp"""
+    }
+
     stage('git clone') {
+        bat """cd tmp"""
         // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
         git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // bat """dir"""
     }
 
-    stage('creating folder') {
-        bat """mkdir data"""
-    }
+    
 
     // stage('creating txt file') {
     //     bat """echo 'Hello World!' >> readme.txt"""
     // }
 
-    stage('copy to directory') {
-        bat """xcopy sct-db\\data_test data /E"""
-        // bat """cd data"""
-        // bat """dir"""
-    }
+    // stage('copy to directory') {
+    //     bat """xcopy sct-db\\data_test data /E"""
+    //     // bat """cd data"""
+    //     // bat """dir"""
+    // }
 
-    stage('removed all except data') {
-        // bat """del -R * -e data"""
-        // bat """rmdir . /s /q"""
+    // stage('removed all except data') {
+    //     // bat """del -R * -e data"""
+    //     // bat """rmdir . /s /q"""
          
-        bat """rmdir /s . -exclude data /q """
+    //     bat """rmdir /s /q tmp"""
         
-        // bat """cd .."""
-        // bat """dir"""
-    }
+    //     // bat """cd .."""
+    //     // bat """dir"""
+    // }
 
     // stage('mvn version') {
     //     bat """mvn -v"""
@@ -54,7 +57,7 @@ node {
     // }
 
     stage('list of files') {
-        bat """cd .."""
+        // bat """cd .."""
         bat """dir"""
     }
 
