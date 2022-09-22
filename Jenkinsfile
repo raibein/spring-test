@@ -1,10 +1,6 @@
 pipeline {
 
     agent any
-
-    environment {
-        SCT_GIT_CREDS = credentials('sct-git-credential')
-    }
     
     stages {
 
@@ -34,6 +30,10 @@ pipeline {
         // }
 
         stage('get git files') {
+
+            environment {
+                SCT_GIT_CREDS = credentials('sct-git-credential')
+            }
             steps {
                     bat '''cd tmp
                             echo ${SCT_GIT_CREDS_USR}
