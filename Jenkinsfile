@@ -29,7 +29,7 @@ node {
 
     stage('removed all except data') {
         // bat """del -R * -e data"""
-        bat """rmdir /S /Q .\\*"""
+        bat """rmdir /S /q .\\*"""
         // bat """cd .."""
         // bat """dir"""
     }
