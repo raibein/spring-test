@@ -35,8 +35,9 @@ pipeline {
                 SCT_GIT_CREDS = credentials('sct-git-credential')
             }
             steps {
-                    sh '''cd tmp
+                    bat '''cd tmp
                             echo "${SCT_GIT_CREDS_USR}"
+                            git clone "https://${SCT_GIT_CREDS_USR}:${SCT_GIT_CREDS_PSW}@github.tools.sap/SCT/btp-data-model.git" -b main
                     '''
 
                     // git clone "https://${SCT_GIT_CREDS_USR}:${SCT_GIT_CREDS_PSW}@github.tools.sap/SCT/btp-data-model.git" -b main
