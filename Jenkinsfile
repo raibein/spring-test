@@ -22,7 +22,7 @@ node {
     // }
 
     stage('copy to directory') {
-        bat """chdir /d tmp"""
+        bat """pushd tmp"""
         bat """echo 'Hello World!' >> readme.txt"""
         // bat """xcopy . tmp /E"""
         // bat """dir"""
