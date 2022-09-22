@@ -9,9 +9,8 @@ node {
     stage('git clone') {
         // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
-        // git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        bat """curl -H Authorization: token 5939d49c72c16d9264927a5d8fc9bd2639dd2d08 -H Accept: application/vnd.github.v3+json https://api.github.com/orgs/SCT/repos"""
-        // bat """dir"""
+        
+        git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
     }
 
     stage('creating folder') {
@@ -22,11 +21,12 @@ node {
     //     bat """echo 'Hello World!' >> readme.txt"""
     // }
 
-    // stage('copy to directory') {
-    //     bat """xcopy . tmp /E"""
-    //     // bat """cd data"""
-    //     // bat """dir"""
-    // }
+    stage('copy to directory') {
+        bat """cd tmp"""
+        bat """echo 'Hello World!' >> readme.txt"""
+        // bat """xcopy . tmp /E"""
+        // bat """dir"""
+    }
 
     // stage('removed all except data') {
     //     // bat """del -R * -e data"""
