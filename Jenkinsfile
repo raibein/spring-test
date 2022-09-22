@@ -6,12 +6,12 @@ node {
         // deleteDir()
     }
 
-    stage('git clone') {
-        // git branch: 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
-        git branch : 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        // bat """dir"""
-    }
+    // stage('git clone') {
+    //     // git branch: 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+    //     // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
+    //     git branch : 'main', credentialsId: 'git-token', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+    //     // bat """dir"""
+    // }
 
     // stage('creating folder') {
     //     bat """mkdir data"""
