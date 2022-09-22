@@ -35,7 +35,7 @@ pipeline {
 
         stage('get git files') {
             steps {
-                    withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'PSWD'  usernameVariable: 'USER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'sct-git-credential', passwordVariable: 'PSWD', usernameVariable: 'USER')]) {
                         bat 
                             """
                                 cd tmp && 
