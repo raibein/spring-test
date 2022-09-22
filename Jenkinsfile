@@ -28,7 +28,9 @@ node {
     }
 
     stage('removed all except data') {
+        // bat """del -R * -e data"""
         bat """del -R * -e data"""
+        bat echo "Y"
         bat """cd .."""
         bat """dir"""
     }
