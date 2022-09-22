@@ -11,12 +11,9 @@ node {
     }
 
     stage('git clone') {
-        bat """
-            cd tmp
-            git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        """
         // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
+        git branch : 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
         // bat """dir"""
     }
 
@@ -26,11 +23,11 @@ node {
     //     bat """echo 'Hello World!' >> readme.txt"""
     // }
 
-    // stage('copy to directory') {
-    //     bat """xcopy sct-db\\data_test data /E"""
-    //     // bat """cd data"""
-    //     // bat """dir"""
-    // }
+    stage('copy to directory') {
+        bat """xcopy . tmp /E"""
+        // bat """cd data"""
+        // bat """dir"""
+    }
 
     // stage('removed all except data') {
     //     // bat """del -R * -e data"""
