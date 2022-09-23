@@ -77,17 +77,19 @@ pipeline {
         }
 
         stage("git config") {
-            bat"""
-                git config --global --add safe.directory ${env.WORKSPACE}
-                git config --global credential.helper wincred
-                git config --global user.name ${RABEN_GIT_CREDS_USR}
-                git config --global user.email "xraben5@gmail.com"
-                git config --global user.pass ${RABEN_GIT_CREDS_PSW}
+            steps {
+                bat"""
+                    git config --global --add safe.directory ${env.WORKSPACE}
+                    git config --global credential.helper wincred
+                    git config --global user.name ${RABEN_GIT_CREDS_USR}
+                    git config --global user.email "xraben5@gmail.com"
+                    git config --global user.pass ${RABEN_GIT_CREDS_PSW}
 
-                git status
-                git checkout -b raben
-                git pull origin main
-            """
+                    git status
+                    git checkout -b raben
+                    git pull origin main
+                """
+            }
         }
 
         stage("Push") {
