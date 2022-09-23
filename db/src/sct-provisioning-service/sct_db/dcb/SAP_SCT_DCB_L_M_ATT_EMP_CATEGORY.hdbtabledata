@@ -1,0 +1,32 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "ID_EMP_CATEGORY":  "ID_EMP_CATEGORY",
+                                                "EMP_CATEGORY_NAME":  "EMP_CATEGORY_NAME",
+                                                "CREATED":  "CREATED",
+                                                "CREATED_BY":  "CREATED_BY"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_M_ATT_EMP_CATEGORY.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_M_ATT_EMP_CATEGORY",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_EMP_CATEGORY",
+                                                                       "EMP_CATEGORY_NAME",
+                                                                       "ID_SOURCE",
+                                                                       "CREATED",
+                                                                       "CREATED_BY"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

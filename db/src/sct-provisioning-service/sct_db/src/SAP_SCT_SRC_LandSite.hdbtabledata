@@ -1,0 +1,50 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "MEASURE_UNIT":  "MEASURE_UNIT",
+                                                "ID_BIODIV_CAT":  "ID_BIODIV_CAT",
+                                                "PERIOD_YEAR":  "PERIOD_YEAR",
+                                                "MEASURE_VALUE_CHAR":  "MEASURE_VALUE_CHAR",
+                                                "ID_LEGAL_REL":  "ID_LEGAL_REL",
+                                                "PERIOD_TYPE":  "PERIOD_TYPE",
+                                                "ID_ORIENTATION":  "ID_ORIENTATION",
+                                                "PERIOD_QUARTER":  "PERIOD_QUARTER",
+                                                "ID_MEASURE":  "ID_MEASURE",
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "ID_PROT_AREA_CAT":  "ID_PROT_AREA_CAT",
+                                                "ID_COMPANY_CODE":  "ID_COMPANY_CODE",
+                                                "PERIOD_MONTH":  "PERIOD_MONTH",
+                                                "ID_BUSINESS_LOC":  "ID_BUSINESS_LOC"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_SRC_LandSite.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_SRC_LAND_SITE",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_SOURCE",
+                                                                       "ID_MEASURE",
+                                                                       "MEASURE_VALUE_CHAR",
+                                                                       "MEASURE_UNIT",
+                                                                       "PERIOD_TYPE",
+                                                                       "PERIOD_YEAR",
+                                                                       "PERIOD_MONTH",
+                                                                       "PERIOD_QUARTER",
+                                                                       "ID_BUSINESS_LOC",
+                                                                       "ID_COMPANY_CODE",
+                                                                       "ID_BIODIV_CAT",
+                                                                       "ID_PROT_AREA_CAT",
+                                                                       "ID_ORIENTATION",
+                                                                       "ID_LEGAL_REL"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}
