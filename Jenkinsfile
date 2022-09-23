@@ -38,7 +38,7 @@ pipeline {
 
                 bat """cd tmp &&"""
 
-                bat """git -b 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'"""
+                bat """git clone 'https://$SCT_GIT_CREDS_USR:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git' -b main"""
 
                     // bat """git clone 'https://$SCT_GIT_CREDS_USR:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git' -b main"""
 
