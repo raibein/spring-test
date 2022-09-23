@@ -12,7 +12,7 @@
 - **Using maven** <br/>``` mvn spring-boot:run```
 
 
-- **From jar file**
+- **From jar or war file**
   Create a jar file using '**mvn clean install**' command and then execute
   <br/>```java -jar target/hello-world-1.0.1-SNAPSHOT.jar```
 
