@@ -84,14 +84,15 @@ pipeline {
         //     ''')
         // }
 
-        // stage("Push") {
-        //     environment { 
-        //         GIT_AUTH = credentials('support-team-up') 
-        //     }
-        //     bat('''
-        //             git config --local credential.helper "!f() { echo username=\\$GIT_AUTH_USR; echo password=\\$GIT_AUTH_PSW; }; f"
-        //             git push origin HEAD:$TARGET_BRANCH
-        //     ''')
-        // }
+        stage("Push") {
+            steps {
+                bat """
+                    git checkout main
+                    git add .
+                    git commit -m "made changes"
+                    git push origin main
+                """
+            }
+        }
     }
 }
