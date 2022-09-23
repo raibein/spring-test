@@ -1,0 +1,38 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "VALID_FROM":  "VALID_FROM",
+                                                "ID_STRUCT_NODE":  "ID_STRUCT_NODE",
+                                                "H_RECORD_TYPE":  "H_RECORD_TYPE",
+                                                "VALID_TO":  "VALID_TO",
+                                                "DATA_ACQUISITION":  "DATA_ACQUISITION",
+                                                "ID_STRUCT_LINK":  "ID_STRUCT_LINK",
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "ID_STRUCT_NODE_PAR":  "ID_STRUCT_NODE_PAR"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_H_STRUCTURE_LINK.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_H_STRUCTURE_LINK",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_STRUCT_LINK",
+                                                                       "ID_STRUCT_NODE",
+                                                                       "ID_STRUCT_NODE_PAR",
+                                                                       "VALID_FROM",
+                                                                       "VALID_TO",
+                                                                       "H_RECORD_TYPE",
+                                                                       "DATA_ACQUISITION",
+                                                                       "ID_SOURCE"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

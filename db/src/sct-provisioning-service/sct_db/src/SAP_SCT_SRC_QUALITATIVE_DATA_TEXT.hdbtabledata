@@ -1,0 +1,36 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "PERIOD_QUARTER":  "PERIOD_QUARTER",
+                                                "PERIOD_MONTH":  "PERIOD_MONTH",
+                                                "PERIOD_YEAR":  "PERIOD_YEAR",
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "TEXTS":  "TEXTS",
+                                                "PERIOD_TYPE":  "PERIOD_TYPE",
+                                                "ID_WEF_METRIC":  "ID_WEF_METRIC"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_SRC_QUALITATIVE_DATA_TEXT.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_SRC_QUALITATIVE_DATA_TEXT",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_SOURCE",
+                                                                       "PERIOD_TYPE",
+                                                                       "PERIOD_YEAR",
+                                                                       "PERIOD_QUARTER",
+                                                                       "PERIOD_MONTH",
+                                                                       "ID_WEF_METRIC",
+                                                                       "TEXTS"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}
