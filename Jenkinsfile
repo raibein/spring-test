@@ -27,7 +27,7 @@ pipeline {
         stage('creating tmp folders') {
             steps {
                 bat """
-                    dir('\\db') {
+                    if(!fileExists("\\db")) {
                         rmdir /s /q db
                     }
                 """
