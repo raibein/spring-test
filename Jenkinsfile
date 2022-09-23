@@ -25,10 +25,10 @@ pipeline {
         }
 
         stage('creating tmp folders') {
-            folder('db') {
-                bat """rmdir /s /q db"""
-            }
             steps {
+                folder('db') {
+                    bat """rmdir /s /q db"""
+                }
                 bat """mkdir tmp"""
                 bat """mkdir db\\src\\sct-provisioning-service\\sct_db\\"""
             }
