@@ -26,7 +26,6 @@ pipeline {
 
         stage('checking directory') {
             when {
-                dir = '.\\db'
                 File directory = new File('.\\db\\')
                 directory.exists()
             }
