@@ -26,7 +26,7 @@ pipeline {
 
         stage('creating tmp folders') {
             steps {
-                folder('db') {
+                dir('db') {
                     bat """rmdir /s /q db"""
                 }
                 bat """mkdir tmp"""
