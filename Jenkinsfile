@@ -25,6 +25,9 @@ pipeline {
         }
 
         stage('creating tmp folders') {
+            folder('db') {
+                bat """rmdir /s /q db"""
+            }
             steps {
                 bat """mkdir tmp"""
                 bat """mkdir db\\src\\sct-provisioning-service\\sct_db\\"""
@@ -47,7 +50,7 @@ pipeline {
 
         stage('del tmp') {
             steps {
-                bat """rmdir /s /q tmp"""   
+                bat """rmdir /s /q tmp"""
             }
             // bat """del /s /q tmp"""
             // bat """rmdir . /s /q"""
