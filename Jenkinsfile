@@ -1,8 +1,11 @@
 #!/usr/bin/env groovy
 
 def checkingDIR() {
-    File directory = new File('.\\db\\')
-    exist = directory.exists()
+    DIR = '.\\db\\'
+
+    if(DIR == true) {
+        return "rmdir /s /q db"
+    }
 }
 
 
@@ -36,13 +39,8 @@ pipeline {
         }
 
         stage('checking directory') {
-            when {
-                expression { 
-                    checkingDIR()
-                }
-            }
             steps {
-                bat """rmdir /s /q tmp"""
+                bat checkingDIR()
             }
         }
 
