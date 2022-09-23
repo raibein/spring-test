@@ -37,6 +37,11 @@ pipeline {
         }
 
         stage('create directory') {
+            when { 
+                expression { 
+                    CHECK_FILE == 'true'
+                } 
+            }
             steps {
                 bat """mkdir tmp"""
                 bat """mkdir db\\src\\sct-provisioning-service\\sct_db\\"""
