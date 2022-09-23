@@ -2,6 +2,11 @@ pipeline {
 
     agent any
 
+    def checkingDIR() {
+        File directory = new File('.\\db\\')
+        exist = directory.exists()
+    }
+
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
@@ -30,7 +35,7 @@ pipeline {
         stage('checking directory') {
             when {
                 expression { 
-                    directory.exists()
+                    checkingDIR()
                 }
             }
             steps {
