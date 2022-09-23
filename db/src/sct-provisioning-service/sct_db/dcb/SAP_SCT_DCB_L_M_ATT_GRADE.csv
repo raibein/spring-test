@@ -1,6 +1,0 @@
-"ID_GRADE","GRADE_NAME","ID_SOURCE","IS_MANAGER","IS_MANAGER_LABEL","IS_ENTRY_LEVEL","CREATED","CREATED_BY"
-"MAN_EXSEN","Executive and Senior Level management","CUSTOMER_CONFIGURATION","1","Management","0","2022-08-23 08:07:51.559000000",""
-"N/A","Undeclared","CUSTOMER_CONFIGURATION","0","Non-Management","0","2022-08-23 08:07:51.559000000",""
-"MAN_FIMID","Middle and First Level Management","CUSTOMER_CONFIGURATION","1","Management","0","2022-08-23 08:07:51.559000000",""
-"EMP","Employee","CUSTOMER_CONFIGURATION","1","Non-Management","0","2022-08-23 08:07:51.559000000",""
-"EMP_ENTRY","Entry Level Employee","CUSTOMER_CONFIGURATION","0","Non-Management","1","2022-08-23 08:07:51.559000000",""
