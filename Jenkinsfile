@@ -97,7 +97,7 @@ pipeline {
                     git checkout -t -b main origin/main
                     git pull origin main
                     git checkout main
-                    git add .\db
+                    git add .\\db
                     git commit -m 'made changes'
                     git push origin main
                 """
