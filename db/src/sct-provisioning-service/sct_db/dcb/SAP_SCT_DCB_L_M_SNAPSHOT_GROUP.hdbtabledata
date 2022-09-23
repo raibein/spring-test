@@ -1,0 +1,32 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_SNAPSHOT_GROUP":  "ID_SNAPSHOT_GROUP",
+                                                "SNAPSHOT_GROUP_DESC":  "SNAPSHOT_GROUP_DESC",
+                                                "SNAPSHOT_GROUP_TYPE":  "SNAPSHOT_GROUP_TYPE",
+                                                "DATA_ACQUISITION":  "DATA_ACQUISITION",
+                                                "ID_SOURCE":  "ID_SOURCE"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_M_SNAPSHOT_GROUP.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_M_SNAPSHOT_GROUP",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_SNAPSHOT_GROUP",
+                                                                       "SNAPSHOT_GROUP_DESC",
+                                                                       "SNAPSHOT_GROUP_TYPE",
+                                                                       "DATA_ACQUISITION",
+                                                                       "ID_SOURCE"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}
