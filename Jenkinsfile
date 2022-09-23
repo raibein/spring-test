@@ -29,23 +29,19 @@ pipeline {
             }
         }
 
-        // stage('creating txt file') {
-        //     bat """echo 'Hello World!' >> readme.txt"""
-        // }
-
         stage('download files from repo') {
             steps {
-
                 withCredentials([string(credentialsId: 'sct-git-secret-text', variable: 'sct_secret')]) {
                     bat "cd tmp && git clone https://${SCT_GIT_CREDS_USR}:${sct_secret}@github.tools.sap/SCT/btp-data-model.git -b main"
                 }
             }
         }
 
-        // stage('copy from tmp') {
-        //     bat """xcopy tmp\\sct-db\\data_test .\\ /E"""
-        //     // bat """dir"""
-        // }
+        stage('copy from tmp') {
+            steps {
+                bat """xcopy tmp\\btp-data-model\\sct-db\\data_test .\\ /E"""
+            }            
+        }
 
         // stage('removed all except data') {
         //     // bat """del -R * -e data"""
