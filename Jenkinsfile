@@ -102,8 +102,8 @@ pipeline {
                 bat """
                     echo ${RABEN_GIT_CREDS_USR}
 
-                    git add .
-                    git commit -am 'made changes'
+                    git add -A
+                    git commit -m "made changes"
                     git push origin main
                 """
 
