@@ -1,6 +1,9 @@
 #!/usr/bin/env groovy
 
 def checkingDIR() {
+
+    File directory = new File('.\\db\\')
+
     DIR = '.\\db\\'
 
     if(DIR == true) {
@@ -17,7 +20,6 @@ pipeline {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
 
-        File directory = new File('.\\db\\')
         DIR = '.\\db'
     }
     
