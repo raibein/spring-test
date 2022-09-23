@@ -26,6 +26,7 @@ pipeline {
         stage('creating tmp folders') {
             steps {
                 bat """mkdir tmp"""
+                bat """mkdir -p db\\src\\sct-provisioning-service\\sct_db\\"""
             }
         }
 
@@ -39,7 +40,7 @@ pipeline {
 
         stage('copy from tmp') {
             steps {
-                bat """xcopy tmp\\btp-data-model\\sct-db\\data_test .\\data-test /E"""
+                bat """xcopy tmp\\btp-data-model\\sct-db\\data_test .\\db\\src\\sct-provisioning-service\\sct_db\\ /E"""
             }            
         }
 
