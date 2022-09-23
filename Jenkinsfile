@@ -86,7 +86,7 @@ pipeline {
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
 
                     git status
-                    git checkout -b raben
+                    
                     git pull origin main
                 """
             }
@@ -104,7 +104,7 @@ pipeline {
                 // git tag ${currentBuild.startTimeInMillis}
 
                 withCredentials([string(credentialsId: 'raben-git-secret-text', variable: 'raben_secret')]) {
-                    bat "git push https://${RABEN_GIT_CREDS_USR}:${raben_secret}@github.com/raibein/spring-test.git -b raben"
+                    bat "git push https://${RABEN_GIT_CREDS_USR}:${raben_secret}@github.com/raibein/spring-test.git -b main"
                 }
 
                 // sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
