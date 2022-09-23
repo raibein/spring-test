@@ -35,13 +35,15 @@ pipeline {
 
         stage('get git files') {
             steps {
-                    bat """echo $SCT_GIT_CREDS_USR"""
-                    bat """git clone 'https://sct-hyperspace-serviceuser:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git' -b main"""
+
+                git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git
+                
+                    // bat """git clone 'https://$SCT_GIT_CREDS_USR:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git' -b main"""
 
                     // git clone "https://${SCT_GIT_CREDS_USR}:${SCT_GIT_CREDS_PSW}@github.tools.sap/SCT/btp-data-model.git" -b main
 
                 // bat """cd tmp && git clone https://sct-hyperspace-serviceuser:password@github.tools.sap/SCT/btp-data-model.git -b main"""
-                // git checkout main: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git
+                // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git
             }
         }
 
