@@ -24,8 +24,8 @@ pipeline {
 
 
                 bat """
+                    git config --global --add safe.directory ${env.WORKSPACE}
                     git config --global credential.helper wincred
-                    git config --global --add safe.directory .
                     git config --global user.name "Raben Shrestha"
                     git config --global user.email xraben5@gmail.com
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
