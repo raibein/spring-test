@@ -5,7 +5,6 @@ pipeline {
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
-        CHECK_FILE = fileExists '/db'
     }
     
     stages {
@@ -25,23 +24,7 @@ pipeline {
             }
         }
 
-        // stage('check folders') {
-        //     when { 
-        //         expression { 
-        //             CHECK_FILE == 'false'
-        //         } 
-        //     }
-        //     steps {
-        //         bat """rmdir /s /q db"""
-        //     }
-        // }
-
-        stage('create directory') {
-            when { 
-                expression { 
-                    CHECK_FILE == 'true'
-                } 
-            }
+        stage('creating tmp folders') {
             steps {
                 bat """mkdir tmp"""
                 bat """mkdir db\\src\\sct-provisioning-service\\sct_db\\"""
