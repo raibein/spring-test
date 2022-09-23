@@ -4,7 +4,7 @@ def checkingDIR() {
 
     File directory = new File('.\\db\\')
 
-    return directory.exists()
+    directory.exists()
 }
 
 
