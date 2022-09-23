@@ -26,8 +26,8 @@ pipeline {
 
         stage('creating tmp folders') {
             steps {
-                when(!fileExists("/db"))
-                    bat """rmdir /s /q db"""
+                when {
+                    equals(!fileExists("/db"), bat """rmdir /s /q db""")
                 }
                 bat """mkdir tmp"""
                 bat """mkdir db\\src\\sct-provisioning-service\\sct_db\\"""
