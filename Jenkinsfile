@@ -103,7 +103,7 @@ pipeline {
                 """
 
                 withCredentials([string(credentialsId: 'raben-git-secret-text', variable: 'raben_secret')]) {
-                    bat('git push https://${RABEN_GIT_CREDS_USR}:${raben-git-secret-text}@github.com/raibein/spring-test.git')
+                    bat('git push https://${RABEN_GIT_CREDS_USR}:${raben_secret}@github.com/raibein/spring-test.git')
                 }
 
                 // sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
