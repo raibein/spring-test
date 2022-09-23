@@ -102,8 +102,8 @@ pipeline {
                     git tag ${currentBuild.startTimeInMillis}
                 """
 
-                withCredentials([usernamePassword(credentialsId: 'raben-git-creds', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                    bat('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/raibein/spring-test.git')
+                withCredentials([string(credentialsId: 'raben-git-secret-text', variable: 'raben_secret')]) {
+                    bat('git push https://${RABEN_GIT_CREDS_USR}:${raben-git-secret-text}@github.com/raibein/spring-test.git')
                 }
 
                 // sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
