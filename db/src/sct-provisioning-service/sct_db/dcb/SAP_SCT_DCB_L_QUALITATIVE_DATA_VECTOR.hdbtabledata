@@ -1,0 +1,32 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_LINK_PLACE":  "ID_LINK_PLACE",
+                                                "ID_WEF_METRIC":  "ID_WEF_METRIC",
+                                                "ID_QD_STATUS":  "ID_QD_STATUS",
+                                                "ID_QUALITATIVE_VEC":  "ID_QUALITATIVE_VEC",
+                                                "ID_MULTILINK": "ID_MULTILINK"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_QUALITATIVE_DATA_VECTOR.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_QUALITATIVE_DATA_VECTOR",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_QUALITATIVE_VEC",
+                                                                       "ID_QD_STATUS",
+                                                                       "ID_LINK_PLACE",
+                                                                       "ID_WEF_METRIC",
+                                                                       "ID_MULTILINK"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

@@ -1,0 +1,42 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "VALID_FROM":  "VALID_FROM",
+                                                "ID_STRUCT_ATT":  "ID_STRUCT_ATT",
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "ID_COUNTRY_CODE":  "ID_COUNTRY_CODE",
+                                                "VALID_TO":  "VALID_TO",
+                                                "ID_COMPANY_CODE":  "ID_COMPANY_CODE",
+                                                "DATA_ACQUISITION":  "DATA_ACQUISITION",
+                                                "ID_STRUCT_NODE":  "ID_STRUCT_NODE",
+                                                "ITEM_NAME":  "ITEM_NAME",
+                                                "ITEM_ID":  "ITEM_ID"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_M_STRUCTURE_ATT.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_M_STRUCTURE_ATT",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_STRUCT_ATT",
+                                                                       "ID_STRUCT_NODE",
+                                                                       "VALID_FROM",
+                                                                       "VALID_TO",
+                                                                       "ITEM_ID",
+                                                                       "ITEM_NAME",
+                                                                       "ID_COMPANY_CODE",
+                                                                       "ID_COUNTRY_CODE",
+                                                                       "DATA_ACQUISITION",
+                                                                       "ID_SOURCE"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

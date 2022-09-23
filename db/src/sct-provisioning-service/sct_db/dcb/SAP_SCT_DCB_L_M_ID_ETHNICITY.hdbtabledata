@@ -1,0 +1,24 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_ETHNICITY":  "ID_ETHNICITY"                                                
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_M_ID_ETHNICITY.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_M_ID_ETHNICITY",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_ETHNICITY"                                                                       
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

@@ -1,0 +1,46 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "MEASURE_COUNT":  "MEASURE_COUNT",
+                                                "PERIOD_QUARTER":  "PERIOD_QUARTER",
+                                                "PERIOD_MONTH":  "PERIOD_MONTH",
+                                                "PERIOD_YEAR":  "PERIOD_YEAR",
+                                                "ID_BUSINESS_LOC":  "ID_BUSINESS_LOC",
+                                                "MEASURE_UNIT":  "MEASURE_UNIT",
+                                                "ID_ORG_UNIT":  "ID_ORG_UNIT",
+                                                "ID_MEASURE":  "ID_MEASURE",
+                                                "MEASURE_VALUE_CHAR":  "MEASURE_VALUE_CHAR",
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "ID_COMPANY_CODE":  "ID_COMPANY_CODE",
+                                                "PERIOD_TYPE":  "PERIOD_TYPE"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_SRC_GEN_MEASURE.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_SRC_GEN_MEASURE",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_SOURCE",
+                                                                       "PERIOD_TYPE",
+                                                                       "PERIOD_YEAR",
+                                                                       "PERIOD_QUARTER",
+                                                                       "PERIOD_MONTH",
+                                                                       "ID_COMPANY_CODE",
+                                                                       "ID_ORG_UNIT",
+                                                                       "ID_BUSINESS_LOC",
+                                                                       "ID_MEASURE",
+                                                                       "MEASURE_VALUE_CHAR",
+                                                                       "MEASURE_UNIT",
+                                                                       "MEASURE_COUNT"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}
