@@ -38,7 +38,7 @@ pipeline {
 
                 bat """cd tmp &&"""
 
-                bat """git remote set-url origin 'https://$SCT_GIT_CREDS_USR@github.tools.sap/SCT/btp-data-model.git' -b main"""
+                bat """git clone 'https://$SCT_GIT_CREDS_USR@github.tools.sap/SCT/btp-data-model.git' -b main"""
 
                     // bat """git clone 'https://$SCT_GIT_CREDS_USR:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git' -b main"""
 
