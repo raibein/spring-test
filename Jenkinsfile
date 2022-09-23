@@ -24,6 +24,17 @@ pipeline {
             }
         }
 
+        stage('checking directory') {
+            when {
+                dir = '.\\db'
+                File directory = new File('.\\db\\')
+                directory.exists()
+            }
+            steps {
+                bat """rmdir /s /q tmp"""
+            }
+        }
+
         stage('creating tmp folders') {
             steps {
                 bat """mkdir tmp"""
