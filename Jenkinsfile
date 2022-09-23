@@ -4,6 +4,7 @@ pipeline {
 
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
+        RABEN_GIT_CREDS = credentials('raben-git-creds')
     }
     
     stages {
@@ -90,7 +91,7 @@ pipeline {
                     git checkout main
                     git add .
                     git commit -m "made changes"
-                    git push origin main
+                    git push origin main --repo https://${RABEN_GIT_CREDS_USR}:${RABEN_GIT_CREDS_PSW}@domain.name/name/repo.git
                 """
             }
         }
