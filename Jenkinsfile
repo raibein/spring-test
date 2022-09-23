@@ -46,15 +46,10 @@ pipeline {
 
         stage('del tmp') {
             steps {
-                bat """del /s /q tmp"""
+                bat """rmdir /s /q tmp"""   
             }
-            
+            // bat """del /s /q tmp"""
             // bat """rmdir . /s /q"""
-            
-            // bat """rmdir /s /q tmp"""
-            
-            // bat """cd .."""
-            // bat """dir"""
         }
 
         // stage('mvn version') {
