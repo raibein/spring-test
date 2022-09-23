@@ -101,9 +101,9 @@ pipeline {
             steps {
                 bat """
                     echo ${RABEN_GIT_CREDS_USR}
-                    
-                    git add db
-                    git commit -m 'made changes'
+
+                    git add .
+                    git commit -am 'made changes'
                     git push origin main
                 """
 
