@@ -37,7 +37,7 @@ pipeline {
             steps {
 
                 withCredentials([string(credentialsId: 'sct-git-secret-text', variable: 'sct_secret')]) {
-                    bat 'cd tmp && git clone https://${SCT_GIT_CREDS_USR}:${sct_secret}@github.tools.sap/SCT/btp-data-model.git -b main'
+                    bat "cd tmp && git clone https://${SCT_GIT_CREDS_USR}:${sct_secret}@github.tools.sap/SCT/btp-data-model.git -b main"
                 }
                 
 
