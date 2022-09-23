@@ -89,11 +89,12 @@ pipeline {
             steps {
                 bat """
                     git checkout main
-                    git add .
-                    git commit -m "made changes"
                     git config --global user.email xraben5@gmail.com
                     git config --global user.name ${RABEN_GIT_CREDS_USR}
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
+
+                    git add .
+                    git commit -m "made changes"
                     git push origin main
                 """
 
