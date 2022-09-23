@@ -94,12 +94,10 @@ pipeline {
 
                     git checkout main
                     git add .
-                    git commit -m "made changes"
-                    
-                    git push origin main --repo https://${RABEN_GIT_CREDS_USR}:${RABEN_GIT_CREDS_PSW}@github.com/raibein/spring-test.git
+                    git commit -m 'made changes'
+                    git push origin main
                 """
 
-                // git push origin main
                 // git push origin main --repo https://${RABEN_GIT_CREDS_USR}:${RABEN_GIT_CREDS_PSW}@github.com/raibein/spring-test.git
             }
         }
