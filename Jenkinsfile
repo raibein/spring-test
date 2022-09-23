@@ -94,13 +94,12 @@ pipeline {
 
         stage("Push") {
             steps {
-                def TS = $(data +%s)
                 bat """
                     echo ${RABEN_GIT_CREDS_USR}
 
                     git add -A
                     git commit -am "made changes"
-                    git tag ${TS}
+                    git tag ${currentBuild.startTimeInMillis}
                     git push -u origin raben
                 """
 
