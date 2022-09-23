@@ -36,7 +36,7 @@ pipeline {
         stage('get git files') {
             steps {
 
-                bat """cd tmp &"""
+                bat """cd tmp &&"""
 
                 git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
 
