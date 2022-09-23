@@ -4,11 +4,7 @@ def checkingDIR() {
 
     File directory = new File('.\\db\\')
 
-    DIR = '.\\db\\'
-
-    if(DIR == true) {
-        return "rmdir /s /q db"
-    }
+    return directory.exists()
 }
 
 
@@ -41,8 +37,13 @@ pipeline {
         }
 
         stage('checking directory') {
+            when {
+                expression {
+                    checkingDIR()
+                }
+            }
             steps {
-                bat checkingDIR()
+                 bat """rmdir /s /q db"""
             }
         }
 
