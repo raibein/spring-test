@@ -46,7 +46,7 @@ pipeline {
 
         stage('del tmp') {
             steps {
-                bat """del tmp"""
+                bat """del /s /q tmp"""
             }
             
             // bat """rmdir . /s /q"""
