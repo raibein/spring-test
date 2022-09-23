@@ -5,6 +5,7 @@ pipeline {
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
+        DIR = '.\\db'
     }
     
     stages {
@@ -27,7 +28,9 @@ pipeline {
         stage('checking directory') {
             when {
                 File directory = new File('.\\db\\')
-                directory.exists()
+                expression { 
+                    directory.exists()
+                }
             }
             steps {
                 bat """rmdir /s /q tmp"""
