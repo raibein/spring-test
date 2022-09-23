@@ -26,7 +26,7 @@ pipeline {
         stage('creating tmp folders') {
             steps {
                 bat """mkdir tmp"""
-                bat """mkdir -p db\\src\\sct-provisioning-service\\sct_db\\"""
+                bat """mkdir db\\src\\sct-provisioning-service\\sct_db\\"""
             }
         }
 
@@ -44,15 +44,18 @@ pipeline {
             }            
         }
 
-        // stage('removed all except data') {
-        //     // bat """del -R * -e data"""
-        //     // bat """rmdir . /s /q"""
+        stage('del tmp') {
+            steps {
+                bat """del tmp"""
+            }
             
-        //     bat """rmdir /s /q tmp"""
+            // bat """rmdir . /s /q"""
             
-        //     // bat """cd .."""
-        //     // bat """dir"""
-        // }
+            // bat """rmdir /s /q tmp"""
+            
+            // bat """cd .."""
+            // bat """dir"""
+        }
 
         // stage('mvn version') {
         //     bat """mvn -v"""
