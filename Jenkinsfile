@@ -39,7 +39,7 @@ pipeline {
 
         stage('copy from tmp') {
             steps {
-                bat """xcopy tmp\\btp-data-model\\sct-db\\data_test .\\ /E"""
+                bat """xcopy tmp\\btp-data-model\\sct-db\\data_test .\\data-test /E"""
             }            
         }
 
