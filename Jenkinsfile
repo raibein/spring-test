@@ -25,16 +25,16 @@ pipeline {
             }
         }
 
-        stage('check folders') {
-            when { 
-                expression { 
-                    CHECK_FILE == 'false'
-                } 
-            }
-            steps {
-                bat """rmdir /s /q db"""
-            }
-        }
+        // stage('check folders') {
+        //     when { 
+        //         expression { 
+        //             CHECK_FILE == 'false'
+        //         } 
+        //     }
+        //     steps {
+        //         bat """rmdir /s /q db"""
+        //     }
+        // }
 
         stage('create directory') {
             when { 
