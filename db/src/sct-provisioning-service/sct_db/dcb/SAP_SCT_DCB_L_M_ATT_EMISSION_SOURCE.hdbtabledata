@@ -1,0 +1,36 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_EMISSION_SOURCE":  "ID_EMISSION_SOURCE",
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "REMARKS":  "REMARKS",
+                                                "EMISSION_TYPE":  "EMISSION_TYPE",
+                                                "ID_EMISSION":  "ID_EMISSION",
+                                                "CREATED":  "CREATED",
+                                                "CREATED_BY":  "CREATED_BY"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_M_ATT_EMISSION_SOURCE.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_M_ATT_EMISSION_SOURCE",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_EMISSION_SOURCE",
+                                                                       "ID_EMISSION",
+                                                                       "EMISSION_TYPE",
+                                                                       "REMARKS",
+                                                                       "ID_SOURCE",
+                                                                       "CREATED",
+                                                                       "CREATED_BY"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

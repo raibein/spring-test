@@ -1,0 +1,44 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_ORIENTATION":  "ID_ORIENTATION",
+                                                "ID_WATER_SOURCE":  "ID_WATER_SOURCE",
+                                                "ID_USE_TYPE":  "ID_USE_TYPE",
+                                                "ID_LEGAL_REL":  "ID_LEGAL_REL",
+                                                "ID_SCOPE":  "ID_SCOPE",
+                                                "ID_PLANET_VEC":  "ID_PLANET_VEC",
+                                                "ID_STRESS_CATEGORY":  "ID_STRESS_CATEGORY",
+                                                "ID_BIODIV_CAT":  "ID_BIODIV_CAT",
+                                                "ID_PROT_AREA_CAT":  "ID_PROT_AREA_CAT",
+                                                "ID_EMISSION":  "ID_EMISSION",
+                                                "ID_GAS_TYPE":  "ID_GAS_TYPE"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_PLANET_VECTOR.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_PLANET_VECTOR",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_PLANET_VEC",
+                                                                       "ID_EMISSION",
+                                                                       "ID_GAS_TYPE",
+                                                                       "ID_SCOPE",
+                                                                       "ID_WATER_SOURCE",
+                                                                       "ID_STRESS_CATEGORY",
+                                                                       "ID_USE_TYPE",
+                                                                       "ID_BIODIV_CAT",
+                                                                       "ID_PROT_AREA_CAT",
+                                                                       "ID_LEGAL_REL",
+                                                                       "ID_ORIENTATION"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}
