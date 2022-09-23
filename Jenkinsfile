@@ -5,6 +5,8 @@ pipeline {
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
+
+        File directory = new File('.\\db\\')
         DIR = '.\\db'
     }
     
@@ -27,7 +29,6 @@ pipeline {
 
         stage('checking directory') {
             when {
-                File directory = new File('.\\db\\')
                 expression { 
                     directory.exists()
                 }
