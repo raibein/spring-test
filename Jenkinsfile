@@ -100,9 +100,13 @@ pipeline {
                     git add -A
                     git commit -am "made changes"
                     git tag ${currentBuild.startTimeInMillis}
-                    git push -u origin raben
                 """
 
+                withCredentials([usernamePassword(credentialsId: 'RABEN_GIT_CREDS', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    bat('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/raibein/spring-test.git')
+                }
+
+                // sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/my-org/my-repo.git')
                 // git push origin main --repo https://${RABEN_GIT_CREDS_USR}:${RABEN_GIT_CREDS_PSW}@github.com/raibein/spring-test.git
             }
         }
