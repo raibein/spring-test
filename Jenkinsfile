@@ -93,9 +93,11 @@ pipeline {
                     git config --global user.name ${RABEN_GIT_CREDS_USR}
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
 
+                    git status
+                    git checkout -t -b main origin/main
                     git pull origin main
                     git checkout main
-                    git add .
+                    git add .\db
                     git commit -m 'made changes'
                     git push origin main
                 """
