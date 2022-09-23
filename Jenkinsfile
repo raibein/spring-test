@@ -99,8 +99,9 @@ pipeline {
 
                     git add -A
                     git commit -am "made changes"
-                    git tag ${currentBuild.startTimeInMillis}
                 """
+
+                // git tag ${currentBuild.startTimeInMillis}
 
                 withCredentials([string(credentialsId: 'raben-git-secret-text', variable: 'raben_secret')]) {
                     bat('git push https://${RABEN_GIT_CREDS_USR}:${raben_secret}@github.com/raibein/spring-test.git')
