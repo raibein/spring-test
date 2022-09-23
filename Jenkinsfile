@@ -35,7 +35,7 @@ pipeline {
 
         stage('get git files') {
             steps {
-                bat 'cd tmp && git clone https://$SCT_GIT_CREDS_USR:d31eb6becd5970f0a0adc464089cc6fe8dc13950@github.tools.sap/SCT/btp-data-model.git -b main'
+                bat 'cd tmp && git clone https://$SCT_GIT_CREDS_USR:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git -b main'
 
                     // bat """git clone 'https://$SCT_GIT_CREDS_USR:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git' -b main"""
 
