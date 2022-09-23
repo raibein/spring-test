@@ -1,0 +1,34 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_SNAPSHOT":  "ID_SNAPSHOT",
+                                                "ID_SNAPSHOT_ENT":  "ID_SNAPSHOT_ENT",
+                                                "ID_STRUCT_NODE_PAR":  "ID_STRUCT_NODE_PAR",
+                                                "ID_STRUCT_LINK":  "ID_STRUCT_LINK",
+                                                "ID_SNAPSHOT_ENT_PAR":  "ID_SNAPSHOT_ENT_PAR",
+                                                "ID_STRUCT_NODE":  "ID_STRUCT_NODE"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_H_SNAPSHOT_ENTRY.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_H_SNAPSHOT_ENTRY",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_SNAPSHOT_ENT",
+                                                                       "ID_SNAPSHOT_ENT_PAR",
+                                                                       "ID_STRUCT_NODE",
+                                                                       "ID_STRUCT_NODE_PAR",
+                                                                       "ID_SNAPSHOT",
+                                                                       "ID_STRUCT_LINK"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

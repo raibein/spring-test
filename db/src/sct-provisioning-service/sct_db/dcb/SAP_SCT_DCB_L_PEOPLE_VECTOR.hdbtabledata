@@ -1,0 +1,50 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "ID_PENALIZATION_TYPE":  "ID_PENALIZATION_TYPE",
+                                                "ID_BODY_SIDE":  "ID_BODY_SIDE",
+                                                "ID_ETHNICITY":  "ID_ETHNICITY",
+                                                "ID_EMP_CATEGORY":  "ID_EMP_CATEGORY",
+                                                "ID_GRADE":  "ID_GRADE",
+                                                "ID_CORRUPT_INC_TYPE":  "ID_CORRUPT_INC_TYPE",
+                                                "ID_INJURY_TYPE":  "ID_INJURY_TYPE",
+                                                "ID_CONTRACT_TYPE":  "ID_CONTRACT_TYPE",
+                                                "ID_CONTRACT_STATUS":  "ID_CONTRACT_STATUS",
+                                                "IS_MAIN_INJURY":  "IS_MAIN_INJURY",
+                                                "ID_AGE_GROUP":  "ID_AGE_GROUP",
+                                                "ID_GENDER":  "ID_GENDER",
+                                                "ID_INJURY_SEVERITY":  "ID_INJURY_SEVERITY",
+                                                "ID_PEOPLE_VEC":  "ID_PEOPLE_VEC"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_PEOPLE_VECTOR.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_PEOPLE_VECTOR",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_PEOPLE_VEC",
+                                                                       "ID_GENDER",
+                                                                       "ID_ETHNICITY",
+                                                                       "ID_GRADE",
+                                                                       "ID_AGE_GROUP",
+                                                                       "ID_EMP_CATEGORY",
+                                                                       "ID_CONTRACT_STATUS",
+                                                                       "ID_CONTRACT_TYPE",
+                                                                       "ID_INJURY_SEVERITY",
+                                                                       "ID_INJURY_TYPE",
+                                                                       "ID_BODY_SIDE",
+                                                                       "IS_MAIN_INJURY",
+                                                                       "ID_CORRUPT_INC_TYPE",
+                                                                       "ID_PENALIZATION_TYPE"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}

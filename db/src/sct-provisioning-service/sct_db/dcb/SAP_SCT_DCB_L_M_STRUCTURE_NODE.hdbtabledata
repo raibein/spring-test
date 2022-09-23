@@ -1,0 +1,40 @@
+{
+    "format_version":  1,
+    "imports":  [
+                    {
+                        "column_mappings":  {
+                                                "VALID_FROM":  "VALID_FROM",
+                                                "DATA_ACQUISITION":  "DATA_ACQUISITION",
+                                                "H_RECORD_TYPE":  "H_RECORD_TYPE",
+                                                "VALID_TO":  "VALID_TO",
+                                                "PK_SOURCE_IDENT":  "PK_SOURCE_IDENT",
+                                                "ID_NODE_TYPE":  "ID_NODE_TYPE",
+                                                "ID_STRUCT_NODE":  "ID_STRUCT_NODE",
+                                                "ID_SOURCE":  "ID_SOURCE",
+                                                "ID_STRUCT_TYPE":  "ID_STRUCT_TYPE"
+                                            },
+                        "source_data":  {
+                                            "data_type":  "CSV",
+                                            "file_name":  "SAP_SCT_DCB_L_M_STRUCTURE_NODE.csv",
+                                            "has_header":  true
+                                        },
+                        "target_table":  "SAP_SCT_DCB_L_M_STRUCTURE_NODE",
+                        "import_settings":  {
+                                                "import_columns":  [
+                                                                       "ID_STRUCT_NODE",
+                                                                       "ID_STRUCT_TYPE",
+                                                                       "ID_NODE_TYPE",
+                                                                       "PK_SOURCE_IDENT",
+                                                                       "VALID_FROM",
+                                                                       "VALID_TO",
+                                                                       "H_RECORD_TYPE",
+                                                                       "DATA_ACQUISITION",
+                                                                       "ID_SOURCE"
+                                                                   ],
+                                                "include_filter":  [
+
+                                                                   ]
+                                            }
+                    }
+                ]
+}
