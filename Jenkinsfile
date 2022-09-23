@@ -94,11 +94,13 @@ pipeline {
 
         stage("Push") {
             steps {
+                def TS = $(data +%s)
                 bat """
                     echo ${RABEN_GIT_CREDS_USR}
 
                     git add -A
-                    git commit -m "made changes"
+                    git commit -am "made changes"
+                    git tag ${TS}
                     git push -u origin raben
                 """
 
