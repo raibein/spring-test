@@ -16,12 +16,12 @@ pipeline {
             }
         }
 
-        // stage('git clone') {
-        //     // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        //     git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
+        stage('git clone') {
+            // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+            git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
             
-        //     // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
-        // }
+            // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+        }
 
         stage('creating tmp folders') {
             steps {
@@ -33,20 +33,12 @@ pipeline {
         //     bat """echo 'Hello World!' >> readme.txt"""
         // }
 
-        stage('get git files') {
+        stage('download files from repo') {
             steps {
 
                 withCredentials([string(credentialsId: 'sct-git-secret-text', variable: 'sct_secret')]) {
                     bat "cd tmp && git clone https://${SCT_GIT_CREDS_USR}:${sct_secret}@github.tools.sap/SCT/btp-data-model.git -b main"
                 }
-                
-
-                    // bat """git clone 'https://$SCT_GIT_CREDS_USR:$SCT_GIT_CREDS_PSW@github.tools.sap/SCT/btp-data-model.git' -b main"""
-
-                    // git clone "https://${SCT_GIT_CREDS_USR}:${SCT_GIT_CREDS_PSW}@github.tools.sap/SCT/btp-data-model.git" -b main
-
-                // bat """cd tmp && git clone https://sct-hyperspace-serviceuser:password@github.tools.sap/SCT/btp-data-model.git -b main"""
-                // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git
             }
         }
 
