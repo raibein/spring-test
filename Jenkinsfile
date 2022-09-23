@@ -13,7 +13,7 @@ pipeline {
             steps {
                 bat """echo clean and delete file and directories"""
                 cleanWs()
-                // deleteDir()
+                deleteDir()
             }
         }
 
@@ -21,6 +21,18 @@ pipeline {
             steps {
                 git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
                 // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
+
+
+                bat """
+                    git config --global credential.helper wincred
+                    git config --global --add safe.directory .
+                    git config --global user.name "Raben Shrestha"
+                    git config --global user.email xraben5@gmail.com
+                    git config --global user.pass ${RABEN_GIT_CREDS_PSW}
+
+                    git status
+                    git pull origin main
+                """
             }
         }
 
@@ -89,19 +101,11 @@ pipeline {
             steps {
                 bat """
                     echo ${RABEN_GIT_CREDS_USR}
+                    
+                    git add db
+                    git commit -m 'made changes'
+                    git push origin main
                 """
-
-                git config --global credential.helper wincred
-                git config --global --add safe.directory .
-                git config --global user.name "Raben Shrestha"
-                git config --global user.email "xraben5@gmail.com"
-                git config --global user.pass "${RABEN_GIT_CREDS_PSW}"
-
-                git status
-                git pull origin main
-                git add db
-                git commit -m 'made changes'
-                git push origin main
 
                 // git push origin main --repo https://${RABEN_GIT_CREDS_USR}:${RABEN_GIT_CREDS_PSW}@github.com/raibein/spring-test.git
             }
