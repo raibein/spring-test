@@ -101,6 +101,9 @@ pipeline {
 
         stage("Git config") {
             steps {
+                TEMP_GIT_BRANCH=${GIT_BRANCH}
+                LOCAL_GIT_BRANCH="${TEMP_GIT_BRANCH#*/}"
+
                 bat"""
                     git config --global --add safe.directory ${env.WORKSPACE}
                     git config --global credential.helper wincred
@@ -109,7 +112,7 @@ pipeline {
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
 
                     git status
-                    git checkout -b ${GIT_BRANCH}
+                    git checkout -b ${LOCAL_GIT_BRANCH}
                     git pull origin main
                 """
             }
