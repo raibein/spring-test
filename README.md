@@ -32,7 +32,7 @@
 
 
 - **cURL**
-  <br/>```curl --request GET 'http://localhost:8082/heeeeelllllloooooooo'```
+  <br/>```curl --request GET 'http://localhost:8082/hello'```
 
 
 ## How to Run Unit Test Cases
