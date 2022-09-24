@@ -17,8 +17,6 @@ pipeline {
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
-
-        DIR = '.\\db'
     }
     
     stages {
@@ -31,14 +29,14 @@ pipeline {
             }
         }
 
-        stage('git clone') {
+        stage('Git clone') {
             steps {
                 git branch: 'main', url: 'https://github.com/raibein/spring-test.git'
                 // git branch: 'main', credentialsId: 'sct-git-credential', url: 'https://github.tools.sap/SCT/btp-data-model.git'
             }
         }
 
-        stage('checking directory') {
+        stage('Checking directory') {
             when {
                 expression {
                     checkingDIR()
@@ -49,14 +47,14 @@ pipeline {
             }
         }
 
-        stage('creating tmp folders') {
+        stage('Creating Directories') {
             steps {
                 bat """mkdir tmp"""
                 bat """mkdir db\\src\\sct-provisioning-service\\sct_db\\"""
             }
         }
 
-        stage('download files from repo') {
+        stage('Download files from repo') {
             steps {
                 withCredentials([string(credentialsId: 'sct-git-secret-text', variable: 'sct_secret')]) {
                     bat "cd tmp && git clone https://${SCT_GIT_CREDS_USR}:${sct_secret}@github.tools.sap/SCT/btp-data-model.git -b main"
@@ -70,7 +68,7 @@ pipeline {
             }            
         }
 
-        stage('del tmp') {
+        stage('Delete tmp') {
             steps {
                 bat """rmdir /s /q tmp"""
             }
@@ -94,14 +92,14 @@ pipeline {
         //     bat """mvn spring-boot:run"""
         // }
 
-        stage('list of files') {
+        stage('List of files') {
             steps {
                 // bat """cd .."""
                 bat """dir"""
             }
         }
 
-        stage("git config") {
+        stage("Git config") {
             steps {
                 bat"""
                     git config --global --add safe.directory ${env.WORKSPACE}
@@ -111,18 +109,18 @@ pipeline {
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
 
                     git status
-                    git checkout -b raben
+                    git checkout -b ${GIT_BRANCH}
                     git pull origin main
                 """
             }
         }
 
-        stage("Push") {
+        stage("Push to Git") {
             steps {
                 bat """
                     echo ${RABEN_GIT_CREDS_USR}
 
-                    git add -A
+                    git add .\\db\\src\\sct-provisioning-service\\sct_db\\
                     git commit -am "made changes"
                 """
 
