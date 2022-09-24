@@ -17,8 +17,6 @@ pipeline {
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
-        TEMP_GIT_BRANCH=${GIT_BRANCH}
-        LOCAL_GIT_BRANCH="${TEMP_GIT_BRANCH#*/}"
     }
     
     stages {
@@ -111,7 +109,7 @@ pipeline {
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
 
                     git status
-                    git checkout -b ${LOCAL_GIT_BRANCH}
+                    git checkout -b ${GIT_LOCAL_BRANCH}
                     git pull origin main
                 """
             }
