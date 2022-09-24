@@ -109,7 +109,7 @@ pipeline {
                     git config --global user.pass ${RABEN_GIT_CREDS_PSW}
 
                     git status
-                    git checkout -b ${GIT_BRANCH}
+                    git checkout -b update-data
                     git pull origin main
                 """
             }
