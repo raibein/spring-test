@@ -17,6 +17,8 @@ pipeline {
     environment {
         SCT_GIT_CREDS = credentials('sct-git-credential')
         RABEN_GIT_CREDS = credentials('raben-git-creds')
+        TEMP_GIT_BRANCH=${GIT_BRANCH}
+        LOCAL_GIT_BRANCH="${TEMP_GIT_BRANCH#*/}"
     }
     
     stages {
@@ -101,9 +103,6 @@ pipeline {
 
         stage("Git config") {
             steps {
-                TEMP_GIT_BRANCH=${GIT_BRANCH}
-                LOCAL_GIT_BRANCH="${TEMP_GIT_BRANCH#*/}"
-
                 bat"""
                     git config --global --add safe.directory ${env.WORKSPACE}
                     git config --global credential.helper wincred
